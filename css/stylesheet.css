@@ -216,6 +216,21 @@ Cards
   margin: 0 10%;
   padding-bottom: 2em;
 }
+/*
+
+*/
+.footer {
+  background-color: #343a40;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2em;
+}
+.footer-list {
+  flex-direction: column;
+}
+.footer-list li {
+  margin: 0.2em 0;
+}
 img {
   width: 100%;
   height: auto;
@@ -276,5 +291,9 @@ img {
     flex-direction: column;
     width: 100%;
     margin: 0;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
   }
 }
