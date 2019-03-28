@@ -201,7 +201,21 @@ Cards
 /*
 
 */
-
+#social-proof {
+  width: 100%;
+  text-align: center;
+  background-color: #e9ecef;
+}
+#social-proof p {
+  font-weight: bold;
+  padding: 1em 0;
+}
+.social-imgs {
+  display: flex;
+  width: 80%;
+  margin: 0 10%;
+  padding-bottom: 2em;
+}
 img {
   width: 100%;
   height: auto;
@@ -250,5 +264,17 @@ img {
   }
   .img-container img {
     width: 100%;
+  }
+  #pricing {
+    flex-direction: column;
+  }
+  .card {
+    width: 80%;
+    margin: 2em 10%;
+  }
+  .social-imgs {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
   }
 }
