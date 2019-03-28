@@ -122,7 +122,33 @@ ul {
   font-weight: bold;
 }
 .box img {
-  max-wi1dth: 50px;
+  max-width: 50px;
+}
+
+.social-media {
+  width: 100%;
+  background-color: #e9ecef;
+  text-align: center;
+}
+.social-media p {
+  font-weight: bold;
+  margin: 0.5em 0;
+  padding-top: 0.5em;
+}
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 0 15%;
+  justify-content: center;
+}
+.img-container img {
+  width: 20%;
+  margin: 0.4em;
+}
+img {
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 420px) {
@@ -161,5 +187,12 @@ ul {
   .box:nth-child(5) {
     margin: 0;
     margin-bottom: 1em;
+  }
+
+  .img-container {
+    flex-direction: center;
+  }
+  .img-container img {
+    width: 100%;
   }
 }
