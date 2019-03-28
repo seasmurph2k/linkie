@@ -146,6 +146,62 @@ ul {
   width: 20%;
   margin: 0.4em;
 }
+/*
+Cards
+*/
+#pricing {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 10%;
+}
+.card {
+  text-align: center;
+  width: 20%;
+  margin: 1em 0;
+  margin-top: 2em;
+}
+.card-header {
+  height: 1em;
+  background-color: #007bff;
+}
+.card-header + div {
+  text-align: start;
+  padding-left: 0.8em;
+  padding-top: 0.2em;
+}
+.price {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0.2em 0;
+}
+.card-heading {
+  font-size: 1.4em;
+  font-weight: lighter;
+}
+.card ul {
+  flex-direction: column;
+  margin: 0.5em 0;
+}
+.card ul li {
+  padding: 0.6em 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.card-footer {
+  width: 100%;
+  height: 3em;
+}
+.card-footer button {
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  border-radius: 0;
+}
+
+/*
+
+*/
+
 img {
   width: 100%;
   height: auto;
