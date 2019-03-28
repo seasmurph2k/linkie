@@ -13,22 +13,7 @@
     <link rel="stylesheet" href="stylesheets/stylesheet.css" />
   </head>
   <body>
-    <header class="header">
-      <div>
-        <ul>
-          <li><a class="nav-link" href="#">Link.ie</a></li>
-          <li><a class="nav-link" href="#">Home</a></li>
-          <li><a class="nav-link" href="#">Features</a></li>
-          <li><a class="nav-link" href="#">Pricing</a></li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li><a class="nav-link" href="">Login</a></li>
-          <li><a class="nav-link btn" href="">Register</a></li>
-        </ul>
-      </div>
-    </header>
+    <%- include('partials/header')%>
     <section class="jumbotron">
       <h2>Shorten and track your links</h2>
       <div>
@@ -172,28 +157,6 @@
         <img src="images/logo_5.png" alt="Auchan" />
       </div>
     </section>
-    <footer class="footer">
-      <ul class="footer-list">
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-      </ul>
-      <ul class="footer-list">
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-      </ul>
-      <ul class="footer-list">
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-        <li>placeholder</li>
-      </ul>
-    </footer>
+    <%- include('partials/footer')%>
   </body>
 </html>
