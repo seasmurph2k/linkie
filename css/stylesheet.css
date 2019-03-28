@@ -144,6 +144,7 @@ ul {
 }
 .img-container img {
   width: 20%;
+  height: 100%;
   margin: 0.4em;
 }
 /*
@@ -212,9 +213,13 @@ Cards
 }
 .social-imgs {
   display: flex;
-  width: 80%;
+  width: 80vw;
   margin: 0 10%;
   padding-bottom: 2em;
+}
+.social-imgs img {
+  width: 20%;
+  height: 100%;
 }
 /*
 
@@ -232,7 +237,7 @@ Cards
   margin: 0.2em 0;
 }
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
