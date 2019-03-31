@@ -282,6 +282,37 @@ fieldset button {
   font-weight: bold;
   padding: 0.5em 0;
 }
+/*
+login
+*/
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  width: 100%;
+}
+
+.login-container form fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 25vw;
+  height: 25vh;
+}
+.login-container form fieldset label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.login-container form fieldset label input {
+  margin-right: 2em;
+}
+.login-container form fieldset button {
+  margin: 0.5em;
+}
 @media screen and (max-width: 420px) {
   .header {
     flex-direction: column;

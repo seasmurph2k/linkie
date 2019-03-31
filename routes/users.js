@@ -1,13 +1,21 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
+const passport = require("passport");
 const validateRegistrationData = require("../validation/register");
 /* GET users listing. */
 router.get("/", function(req, res, next) {
   res.send("respond with a resource");
 });
 
-router.post("/login", async (req, res) => {});
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/dashboard",
+    failureRedirect: "/login"
+  }),
+  async (req, res) => {}
+);
 
 router.post(
   "/register",
