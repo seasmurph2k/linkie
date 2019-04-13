@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Linkie</title>
+
+    <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
+    <link rel="stylesheet" href="/stylesheets/intersitial.css" />
+  </head>
+  <body>
+    <div class="ad-container">
+      <div class="img-ad">
+        <img src="/media/google.jpg" />
+      </div>
+      <div class="video">
+        <div class="rdr-count">
+          <p>Redirecting in... <i id="inc"></i></p>
+        </div>
+        <video
+          id="vidad"
+          class="video-actual"
+          src="/media/Black Friday Product Ad.mp4"
+          type="video/mp4"
+          autoplay
+        >
+          <!--  <source src="/media/Black Friday Product Ad.mp4" type="video/mp4" />-->
+        </video>
+        <div>
+          <a href="#">Earn a percentage of ad share bla bla</a>
+        </div>
+      </div>
+      <div class="img-ad">
+        <img src="/media/google.jpg" />
+      </div>
+    </div>
+    <script>
+      // NTS Temperamental AF in chrome & chromium
+      let video = document.getElementById("vidad");
+      var playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(_ => {})
+          .catch(error => {
+            console.log(error);
+          });
+      }
+
+      setTimeout(() => {
+        let video = document.getElementById("vidad");
+        let time = Math.ceil(video.duration);
+        pseudoCounter(time);
+      }, 1000);
+
+      function pseudoCounter(time) {
+        time = time;
+        let ele = document.getElementById("inc");
+        ele.innerText = time;
+        let timer = setInterval(() => {
+          if (time === 0) {
+            clearInterval(timer);
+            return (window.location = "<%= link %>");
+          }
+          ele.innerText = time;
+          time--;
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
