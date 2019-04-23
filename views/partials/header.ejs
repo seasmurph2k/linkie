@@ -9,8 +9,13 @@
   </div>
   <div>
     <ul>
-      <li><a class="nav-link" href="">Login</a></li>
+      <% if (isAuthed){%>
+      <li><a class="nav-link btn" href="/dashboard">Dashboard</a></li>
+      <li><a class="nav-link " href="/logout">Logout</a></li>
+      <%}else{%>
+      <li><a class="nav-link" href="/login">Login</a></li>
       <li><a class="nav-link btn" href="/register">Register</a></li>
+      <%}%>
     </ul>
   </div>
 </header>
