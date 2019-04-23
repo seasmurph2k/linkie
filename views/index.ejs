@@ -16,15 +16,18 @@
     <%- include('partials/header')%>
     <section class="jumbotron">
       <h2>Shorten and track your links</h2>
-      <div>
+
+      <form action="/shortner" method="post">
         <input
-          type="text"
+          type="url"
           name="link"
           id="link"
           placeholder="https://example.com/really-long-link"
+          required
         />
         <button type="submit" class="btn">Shorten</button>
-      </div>
+      </form>
+
       <h2>Shorten and track your links</h2>
       <p>Turn every link you share into a trackable metric</p>
       <button type="submit" class="btn">Start your free 7 day trail now</button>
