@@ -8,25 +8,34 @@ body {
   display: flex;
   position: relative;
 }
+/*
+Sidebar
+*/
 .sidebar {
   width: 15vw;
-  height: 100%;
+  min-height: 100vh;
+  max-height: 100%;
   background-color: #343a40;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
 }
 .sidebar-small {
   width: 5vw;
 }
-
+.sidebar-small ul li {
+  margin-left: 1em;
+}
 .sidebar-small ul li a {
   display: none;
 }
 .rotate {
   transform: rotate(90deg);
+}
+.sidebar div {
+  align-self: flex-start;
+  margin-left: 0.8em;
 }
 
 .sidebar div i {
@@ -44,12 +53,13 @@ body {
 .sidebar ul li {
   padding: 0.2em;
   border-bottom: 1px solid #f2f2f2;
-  width: 100%;
+  width: 95%;
   text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-size: 1.2em;
+  margin-left: 1em;
 }
 .sidebar ul li i {
   color: #fff;
@@ -63,12 +73,10 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
-  margin-left: 15%;
+  width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .box {
@@ -80,4 +88,38 @@ body {
 
 .data {
   margin: 0.5em;
+}
+
+/*
+My Links
+*/
+table {
+  width: 95%;
+  border-collapse: collapse;
+  line-height: 1.4em;
+}
+th {
+  text-align: left;
+}
+tr {
+  background-color: #929fad;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+}
+#impressions:hover,
+#dateAdded:hover {
+  cursor: pointer;
+}
+.sortdiv {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-left: 85%;
+  padding: 0.25em;
+  width: 20%;
 }
