@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Linkie</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/dashboardstyles.css" />
+  </head>
+  <body>
+    <%- include('partials/sidebar')%>
+    <main class="container">
+      <div class="sortdiv">
+        Sort by:
+        <select id="sortBy">
+          <option disabled selected value="">Select</option>
+          <option value="date">Date</option>
+          <option value="clicks">Clicks</option>
+          <option value="maybeidk">TBC</option>
+        </select>
+      </div>
+      <%- include('partials/mylinkstable')%>
+    </main>
+    <script>
+      let menuButton = document.getElementById("menuIcon");
+      let sidebar = document.getElementsByClassName("sidebar");
+
+      menuButton.onclick = () => {
+        document.getElementById("menuIcon").classList.toggle("rotate");
+        document.getElementById("sidebar").classList.toggle("sidebar-small");
+      };
+
+      let sortBy = document.getElementById("sortBy");
+      sortBy.onchange = () => {
+        if (sortBy.value == "clicks") {
+          impressions.click();
+        }
+        if (sortBy.value == "date") {
+          dateAdded.click();
+        }
+      };
+    </script>
+  </body>
+</html>

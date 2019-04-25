@@ -1,0 +1,58 @@
+<table cellpadding="1" cellspacing="1">
+  <tr>
+    <th>shortcode</th>
+    <th>longurl</th>
+    <th id="impressions">impressions</th>
+    <th>campaign</th>
+    <th id="dateAdded">date added</th>
+  </tr>
+  <% for(let i = 0; i < links.length; i++){%>
+  <tr>
+    <td><%= links[i].shortCode %></td>
+    <td><%= links[i].realLink %></td>
+    <td><%= links[i].views %></td>
+    <td><%= links[i].campaign %></td>
+    <td><%= links[i].dateAdded.toDateString() %></td>
+  </tr>
+  <%} %>
+</table>
+
+<script>
+  const getCellValue = (tr, idx) =>
+    tr.children[idx].innerText || tr.children[idx].textContent;
+
+  const comparer = (idx, asc) => (a, b) =>
+    ((v1, v2) =>
+      v1 !== "" && v2 !== "" && !isNaN(v1) && !isNaN(v2)
+        ? v1 - v2
+        : v1.toString().localeCompare(v2))(
+      getCellValue(asc ? a : b, idx),
+      getCellValue(asc ? b : a, idx)
+    );
+
+  let impressions = document.getElementById("impressions");
+  impressions.addEventListener("click", () => {
+    const table = impressions.closest("table");
+    Array.from(table.querySelectorAll("tr:nth-child(n+2)"))
+      .sort(
+        comparer(
+          Array.from(impressions.parentNode.children).indexOf(impressions),
+          (this.asc = !this.asc)
+        )
+      )
+      .forEach(tr => table.appendChild(tr));
+  });
+
+  let dateAdded = document.getElementById("dateAdded");
+  dateAdded.addEventListener("click", () => {
+    const table = dateAdded.closest("table");
+    Array.from(table.querySelectorAll("tr:nth-child(n+2)"))
+      .sort(
+        comparer(
+          Array.from(dateAdded.parentNode.children).indexOf(dateAdded),
+          (this.asc = !this.asc)
+        )
+      )
+      .forEach(tr => table.appendChild(tr));
+  });
+</script>
