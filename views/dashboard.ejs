@@ -22,58 +22,41 @@
     <%- include('partials/sidebar')%>
     <main class="container">
       <div class="box">
-        <h2>My links</h2>
-        <div class="data">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          corrupti iusto a ipsum ut tempora repellat. Dolorum expedita aperiam
-          commodi incidunt, vero quos asperiores quasi quas delectus inventore
-          rem sint tempora at neque. Dignissimos cupiditate consectetur odit
-          laudantium quisquam saepe numquam id, atque voluptate necessitatibus
-          amet sequi doloribus blanditiis optio.
+        <h2>Overview</h2>
+        <div class="">
+          <ul class="overview-list">
+            <li>Links: 94</li>
+            <li>Impressions: 109891</li>
+            <li>Campaigns: 12</li>
+            <li>Ad revenue: $486</li>
+          </ul>
         </div>
       </div>
       <div class="box">
-        <h2>My links</h2>
-        <div class="data">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          corrupti iusto a ipsum ut tempora repellat. Dolorum expedita aperiam
-          commodi incidunt, vero quos asperiores quasi quas delectus inventore
-          rem sint tempora at neque. Dignissimos cupiditate consectetur odit
-          laudantium quisquam saepe numquam id, atque voluptate necessitatibus
-          amet sequi doloribus blanditiis optio.
-        </div>
+        <h3>Total Clicks By Region:</h3>
+        <canvas id="regional-impressions"></canvas>
       </div>
       <div class="box">
-        <h2>My links</h2>
-        <div class="data">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          corrupti iusto a ipsum ut tempora repellat. Dolorum expedita aperiam
-          commodi incidunt, vero quos asperiores quasi quas delectus inventore
-          rem sint tempora at neque. Dignissimos cupiditate consectetur odit
-          laudantium quisquam saepe numquam id, atque voluptate necessitatibus
-          amet sequi doloribus blanditiis optio.
-        </div>
+        <h3>Earnings Over the past 6 months</h3>
+        <canvas id="monthly-revenu"></canvas>
       </div>
       <div class="box">
-        <h2>My links</h2>
+        <h3>Impression table - Best Performing</h3>
         <div class="data">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          corrupti iusto a ipsum ut tempora repellat. Dolorum expedita aperiam
-          commodi incidunt, vero quos asperiores quasi quas delectus inventore
-          rem sint tempora at neque. Dignissimos cupiditate consectetur odit
-          laudantium quisquam saepe numquam id, atque voluptate necessitatibus
-          amet sequi doloribus blanditiis optio.
-        </div>
-      </div>
-      <div class="box">
-        <h2>My links</h2>
-        <div class="data">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          corrupti iusto a ipsum ut tempora repellat. Dolorum expedita aperiam
-          commodi incidunt, vero quos asperiores quasi quas delectus inventore
-          rem sint tempora at neque. Dignissimos cupiditate consectetur odit
-          laudantium quisquam saepe numquam id, atque voluptate necessitatibus
-          amet sequi doloribus blanditiis optio.
+          <table>
+            <tr>
+              <th>No.</th>
+              <th>URL</th>
+              <th>Impressions</th>
+            </tr>
+            <% for(let i = 0; i < 9; i++){%>
+            <tr>
+              <td class="text-center"><%= i %></td>
+              <td class=""><%= myLinks[i].realLink %></td>
+              <td class="text-center"><%= myLinks[i].views %></td>
+            </tr>
+            <%} %>
+          </table>
         </div>
       </div>
       <div class="box">
@@ -88,6 +71,54 @@
         </div>
       </div>
     </main>
+    <script src="/javascripts/Chart.bundle.min.js"></script>
+    <script>
+      new Chart(document.getElementById("regional-impressions"), {
+        type: "horizontalBar",
+        data: {
+          labels: ["UK", "USA", "Europe", "Africa", "Asia"],
+          datasets: [
+            {
+              label: "Clicks (Thousands)",
+              backgroundColor: [
+                "#3e95cd",
+                "#3e95cd",
+                "#3e95cd",
+                "#3e95cd",
+                "#3e95cd"
+              ],
+              data: [20478, 15267, 2734, 1784, 433]
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: false,
+            text: "Clicks by Region"
+          }
+        }
+      });
+      new Chart(document.getElementById("monthly-revenu"), {
+        type: "line",
+        data: {
+          labels: ["January", "March", "April", "May", "June"],
+          datasets: [
+            {
+              data: [18, 36, 88.66, 106, 156],
+              label: false,
+              borderColor: "#3e95cd",
+              fill: false
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: false
+          }
+        }
+      });
+    </script>
     <script>
       let menuButton = document.getElementById("menuIcon");
       let sidebar = document.getElementsByClassName("sidebar");
