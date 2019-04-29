@@ -24,14 +24,4 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-router.get(
-  "/dashboard",
-  (req, res, next) => {
-    req.isAuthenticated() ? next() : res.redirect("/login");
-  },
-  (req, res) => {
-    res.render("dashboard");
-  }
-);
-
 module.exports = router;
