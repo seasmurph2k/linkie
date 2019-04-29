@@ -41,7 +41,7 @@
       let timer = setInterval(() => {
         if (time === 0) {
           clearInterval(timer);
-          return (window.location = "http://google.com");
+          return (window.location = "<%= link %>");
         }
         ele.innerText = time;
         time--;
