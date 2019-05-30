@@ -8,11 +8,11 @@
   </tr>
   <% for(let i = 0; i < links.length; i++){%>
   <tr>
-    <td><%= links[i].shortCode %></td>
-    <td><%= links[i].realLink %></td>
-    <td><%= links[i].views %></td>
-    <td><%= links[i].campaign %></td>
-    <td><%= links[i].dateAdded.toDateString() %></td>
+    <td class="text-center"><%= links[i].shortCode %></td>
+    <td class="text-center"><%= links[i].realLink %></td>
+    <td class="text-center"><%= links[i].views %></td>
+    <td class="text-center"><%= links[i].campaign %></td>
+    <td class="text-center"><%= links[i].dateAdded.toDateString() %></td>
   </tr>
   <%} %>
 </table>
