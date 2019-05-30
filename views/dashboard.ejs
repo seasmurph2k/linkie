@@ -49,13 +49,13 @@
               <th>URL</th>
               <th>Impressions</th>
             </tr>
-            <% for(let i = 0; i < 9; i++){%>
+            <% if(myLinks.lenght > 0){%> <% for(let i = 0; i < 9; i++){%>
             <tr>
               <td class="text-center"><%= i %></td>
               <td class=""><%= myLinks[i].realLink %></td>
               <td class="text-center"><%= myLinks[i].views %></td>
             </tr>
-            <%} %>
+            <%} %> <%}%>
           </table>
         </div>
       </div>
