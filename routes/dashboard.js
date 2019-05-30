@@ -7,8 +7,11 @@ router.get("/", isAuthed, async (req, res) => {
   myLinks.sort((a, b) => {
     return b.views - a.views;
   });
+  var length;
+  myLinks.length < 9 ? (length = myLinks.length) : (length = 9);
   res.render("dashboard", {
-    myLinks
+    myLinks,
+    linkTableLength: length
   });
 });
 router.get("/mylinks", isAuthed, async (req, res) => {
@@ -19,6 +22,9 @@ router.get("/mylinks", isAuthed, async (req, res) => {
   });
 });
 
+router.get("/campaigns", isAuthed, async (req, res) => {
+  res.render("campaigns");
+});
 //make utils
 function isAuthed(req, res, next) {
   req.isAuthenticated() ? next() : res.redirect("/login");
