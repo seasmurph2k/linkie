@@ -28,7 +28,11 @@ router.post(
       realLink: link
     });
     await newLink.save();
-    res.status(200).json({ link: shortCode });
+    let shortendLink = `${req.protocol}://${req.hostname}:3000/x/${shortCode}`;
+    res.render("link", {
+      link: shortendLink,
+      isAuthed: req.isAuthenticated()
+    });
   }
 );
 
